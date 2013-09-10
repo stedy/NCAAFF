@@ -1,5 +1,6 @@
 #get standings
 library(XML)
+library(stringr)
 
 atc <- readHTMLTable(doc = "http://scores.nbcsports.msnbc.com/cfb/standings.asp?conf=1a%3A001")
 atclean <- as.data.frame(atc[3])
@@ -73,6 +74,7 @@ Sys.sleep(5)
 
 final <- rbind(atclean, big12clean, amerclean, bigtenclean, cusaclean, macclean, mwcclean, pac12clean, secclean, sunclean)
 final$Team <- str_replace_all(final$Team, "[[:digit:]]", "")
+trim.leading <- function (x)  sub("^\\s+", "", x)
 final$Team <- trim.leading(final$Team)
 
 write.table(final, "current_standings.txt", row.names = F)
