@@ -1,0 +1,18 @@
+{% extends "layout.html" %}
+{% block body %}
+    <ul class=metanav>
+    </ul>    
+    <ul class=standings_entries>
+        <li><b>Name</li>
+        <li>Score</b></li>
+    <br>
+        {% for entry in entries %}
+        <li> <a href = "{{ url_for('name_results', name = entry.picker)}}">{{ entry.picker }}</a></li>
+        <li> {{ entry.score }} </li>
+        <br>
+	{% else %}
+	<b>Sorry, this database has not yet been installed</b>	
+        {% endfor %}
+        <img src="/static/lineplot.png" >
+    </ul>
+    {% endblock %}

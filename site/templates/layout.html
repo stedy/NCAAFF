@@ -1,0 +1,16 @@
+<!doctype html>
+<title>GO Huskies</title>
+<link rel="shortcut icon" href="{{ url_for('static', filename='favicon.ico') }}">
+<link rel=stylesheet type=text/css href="{{ url_for('static', filename='style.css') }}">
+<div class=page>
+    <h1>NCAA betting stats</h1>
+    <div class=metanav>
+	<a href="{{ url_for('start') }}">Home</a> | 
+	<a href="{{ url_for('all_conferences') }}">All Conferences</a> 
+    </div>
+    {% for message in get_flashed_messages() %}
+    <div class=flash>{{ message }}</div>
+    
+    {% endfor %}
+    {% block body %}{% endblock %}
+</div>

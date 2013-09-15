@@ -1,0 +1,185 @@
+{% extends "layout.html" %}
+{% block body %}
+    <ul class=conference_entries>
+  <h2>ACC</h2>
+  <table>
+    <tr><td><b>Team</b></td>
+	<td><b>Picker</b></td>
+	<td><b>Conf</b></td> 
+    <td><b>Overall</b></td>
+    <td><b>Conference percent</b></td>
+    <td><b>Points</b></b></td></tr>
+  {% for entry in acc %}
+    <tr><td> {{ entry.school }}</td>
+    <td>{{ entry.picker }}</td>
+    <td>{{ entry.conf }}</td> 
+    <td>{{ entry.overall }}</td>
+    <td>{{ entry.confpercent }}</td>
+    <td>{{ entry.points }}</td></tr>
+  {% endfor %}
+</table>
+<br></br>
+  <h2>American</h2>
+  <table>
+    <tr><td><b>Team</b></td>
+	<td><b>Picker</b></td>
+	<td><b>Conf</b></td> 
+    <td><b>Overall</b></td>
+    <td><b>Conference percent</b></td>
+    <td><b>Points</b></b></td></tr>
+  {% for entry in american %}
+    <tr><td> {{ entry.school }}</td>
+    <td>{{ entry.picker }}</td>
+    <td>{{ entry.conf }}</td> 
+    <td>{{ entry.overall }}</td>
+    <td>{{ entry.confpercent }}</td>
+    <td>{{ entry.points }}</td></tr>
+  {% endfor %}
+</table>
+<br></br>
+  <h2>Big Ten</h2>
+  <table>
+    <tr><td><b>Team</b></td>
+	<td><b>Picker</b></td>
+	<td><b>Conf</b></td> 
+    <td><b>Overall</b></td>
+    <td><b>Conference percent</b></td>
+    <td><b>Points</b></b></td></tr>
+  {% for entry in big10 %}
+    <tr><td> {{ entry.school }}</td>
+    <td>{{ entry.picker }}</td>
+    <td>{{ entry.conf }}</td> 
+    <td>{{ entry.overall }}</td>
+    <td>{{ entry.confpercent }}</td>
+    <td>{{ entry.points }}</td></tr>
+  {% endfor %}
+</table>
+<br></br>
+  <h2>Big Twelve</h2>
+  <table>
+    <tr><td><b>Team</b></td>
+	<td><b>Picker</b></td>
+	<td><b>Conf</b></td> 
+    <td><b>Overall</b></td>
+    <td><b>Conference percent</b></td>
+    <td><b>Points</b></b></td></tr>
+  {% for entry in big12 %}
+    <tr><td> {{ entry.school }}</td>
+    <td>{{ entry.picker }}</td>
+    <td>{{ entry.conf }}</td> 
+    <td>{{ entry.overall }}</td>
+    <td>{{ entry.confpercent }}</td>
+    <td>{{ entry.points }}</td></tr>
+  {% endfor %}
+</table>
+<br></br>
+  <h2><b>Conf</b>erence USA</h2>
+  <table>
+    <tr><td><b>Team</b></td>
+	<td><b>Picker</b></td>
+	<td><b>Conf</b></td> 
+    <td><b>Overall</b></td>
+    <td><b>Conference percent</b></td>
+    <td><b>Points</b></b></td></tr>
+  {% for entry in cusa %}
+    <tr><td> {{ entry.school }}</td>
+    <td>{{ entry.picker }}</td>
+    <td>{{ entry.conf }}</td> 
+    <td>{{ entry.overall }}</td>
+    <td>{{ entry.confpercent }}</td>
+    <td>{{ entry.points }}</td></tr>
+  {% endfor %}
+</table>
+<br></br>
+  <h2>MAC</h2>
+  <table>
+    <tr><td><b>Team</b></td>
+	<td><b>Picker</b></td>
+	<td><b>Conf</b></td> 
+    <td><b>Overall</b></td>
+    <td><b>Conference percent</b></td>
+    <td><b>Points</b></b></td></tr>
+  {% for entry in mac %}
+    <tr><td> {{ entry.school }}</td>
+    <td>{{ entry.picker }}</td>
+    <td>{{ entry.conf }}</td> 
+    <td>{{ entry.overall }}</td>
+    <td>{{ entry.confpercent }}</td>
+    <td>{{ entry.points }}</td></tr>
+  {% endfor %}
+</table>
+<br></br>
+  <h2>MWC</h2>
+  <table>
+    <tr><td><b>Team</b></td>
+	<td><b>Picker</b></td>
+	<td><b>Conf</b></td> 
+    <td><b>Overall</b></td>
+    <td><b>Conference percent</b></td>
+    <td><b>Points</b></b></td></tr>
+  {% for entry in mwc %}
+    <tr><td> {{ entry.school }}</td>
+    <td>{{ entry.picker }}</td>
+    <td>{{ entry.conf }}</td> 
+    <td>{{ entry.overall }}</td>
+    <td>{{ entry.confpercent }}</td>
+    <td>{{ entry.points }}</td></tr>
+  {% endfor %}
+</table>
+<br></br>
+  <h2>Pac-12</h2>
+  <table>
+    <tr><td><b>Team</b></td>
+	<td><b>Picker</b></td>
+	<td><b>Conf</b></td> 
+    <td><b>Overall</b></td>
+    <td><b>Conference percent</b></td>
+    <td><b>Points</b></b></td></tr>
+  {% for entry in pac12 %}
+    <tr><td> {{ entry.school }}</td>
+    <td>{{ entry.picker }}</td>
+    <td>{{ entry.conf }}</td> 
+    <td>{{ entry.overall }}</td>
+    <td>{{ entry.confpercent }}</td>
+    <td>{{ entry.points }}</td></tr>
+  {% endfor %}
+</table>
+<br></br>
+  <h2>SEC</h2>
+  <table>
+    <tr><td><b>Team</b></td>
+	<td><b>Picker</b></td>
+	<td><b>Conf</b></td> 
+    <td><b>Overall</b></td>
+    <td><b>Conference percent</b></td>
+    <td><b>Points</b></b></td></tr>
+  {% for entry in sec %}
+    <tr><td> {{ entry.school }}</td>
+    <td>{{ entry.picker }}</td>
+    <td>{{ entry.conf }}</td> 
+    <td>{{ entry.overall }}</td>
+    <td>{{ entry.confpercent }}</td>
+    <td>{{ entry.points }}</td></tr>
+  {% endfor %}
+</table>
+<br></br>
+  <h2>Sun Belt</h2>
+  <table>
+    <tr><td><b>Team</b></td>
+	<td><b>Picker</b></td>
+	<td><b>Conf</b></td> 
+    <td><b>Overall</b></td>
+    <td><b>Conference percent</b></td>
+    <td><b>Points</b></b></td></tr>
+  {% for entry in sunbelt %}
+    <tr><td> {{ entry.school }}</td>
+    <td>{{ entry.picker }}</td>
+    <td>{{ entry.conf }}</td> 
+    <td>{{ entry.overall }}</td>
+    <td>{{ entry.confpercent }}</td>
+    <td>{{ entry.points }}</td></tr>
+  {% endfor %}
+</table>
+<br></br>
+    </ul>
+    {% endblock %}
