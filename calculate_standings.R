@@ -17,12 +17,10 @@ final <- c()
 for(i in conferences){
   temp <- merged[merged$conference == i, ]
   temp2 <- temp[order(temp$confpercent, decreasing = T), ]
-  #small <- unique(temp2$confpercent)
   vals <- seq(25, 1, by = -2)
   points <- seq(25, -5, by = -2)
   points <- points[1:nrow(temp2)]
   ranks <- 1:length(points)
-  #small <- unique(standings)
   scoretables <- data.frame(ranks, points, temp$confpercent)
   k <- rank(-scoretables[, 3], ties = "min")
   scorefinal <- merge(k, scoretables, by.x=1, by.y=1)
@@ -38,13 +36,10 @@ standings <- scores[order(scores$score, decreasing = T), ]
 print.data.frame(standings, row.names=F)
 standings <- standings[standings$picker != "", ]
 
-#write.csv(k, "version1.csv", row.names=F)
-
 conn <- dbConnect(SQLite(), dbname="site/ncaaff.db")
 dbSendQuery(conn, "DROP table if exists standings;")
 dbWriteTable(conn, "standings", standings)
 dbSendQuery(conn, "DROP table if exists allconf;")
-#is.na(final$points) <- ""
 dbWriteTable(conn, "allconf", final)
 dbDisconnect(conn)
 
