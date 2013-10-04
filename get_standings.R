@@ -1,6 +1,7 @@
 #get standings
 library(XML)
 library(stringr)
+library(RSQLite)
 
 atc <- readHTMLTable(doc = "http://scores.nbcsports.msnbc.com/cfb/standings.asp?conf=1a%3A001")
 atclean <- as.data.frame(atc[3])
@@ -77,4 +78,8 @@ final$Team <- str_replace_all(final$Team, "[[:digit:]]", "")
 trim.leading <- function (x)  sub("^\\s+", "", x)
 final$Team <- trim.leading(final$Team)
 
+conn <- dbConnect(SQLite(), dbname="site/ncaaff.db")
+dbSendQuery(conn, "DROP table if exists raw_conference")
+dbWriteQuery(conn, "raw_conference", final)
+dbDisconnect(conn)
 write.table(final, "current_standings.txt", row.names = F)
