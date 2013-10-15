@@ -1,4 +1,3 @@
-<!DOCTYPE html>
 {% extends "layout.html" %}
 {% block body %}
 
@@ -64,7 +63,7 @@ body {
     var color = d3.scale.category10(); // to generate a different color for each line
     
     // to be used later
-    var countries,
+    var pickers,
         filtered,
         transpose;
     
@@ -99,10 +98,10 @@ body {
     var menu = d3.select("#menu select")
     .on("change", change);    
 			    
-// put data from csv into countries variable
+// put data from csv into pickers variable
 //run redraw function that will refresh whenever a new data series is selected 
 d3.csv("/static/points_by_week.csv", function(csv) {
-		countries = csv;
+		pickers = csv;
         redraw();
     });
 
@@ -113,7 +112,7 @@ d3.select(window)
 var altKey;
 
 // set terms of transition that will take place
-// when a new economic indicator is chosen   
+// when a new football season is chosen
 function change() {
   clearTimeout(timeout);
 
@@ -125,10 +124,10 @@ function change() {
 // all the meat goes in the redraw function
 function redraw() {
     
-    // create data nests based on economic indicator (series)
+    // create data nests based on season (series)
     var nested = d3.nest()
 		.key(function(d) { return d.indicatorCode; })
-		.map(countries)
+		.map(pickers)
     
     // get value from menu selection
     // the option values are set in HTML and correspond
@@ -139,7 +138,7 @@ function redraw() {
     var data = nested[series];
     
     // for object constancy we will need to set "keys", one for each picker.
-    // the keyring variable contains only the names of the countries
+    // the keyring variable contains only the names of the pickers
     var keyring = d3.keys(data[0]).filter(function(key) { 
      	    return (key !== "indicatorName" && key !== "yearCode" && key !== "indicatorCode" && key !== "year");
      	});
@@ -214,12 +213,6 @@ function redraw() {
           
 // that concludes redraw()
 }
-
-// automatically change value after a few seconds
-var timeout = setTimeout(function() {
-  menu.property("value", "ENEUSE").node().focus();
-  change();
-}, 7000);
 
 	</script>
 </body>
