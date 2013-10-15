@@ -96,7 +96,7 @@ def query_results():
 
 @app.route('/<name>')
 def name_results(name):
-    entries = query_db("""select Team, Conf from picks where Picker == ?""", [name], one = False)
+    entries = query_db("""select Team, Conf, Picker from picks where Picker == ?""", [name], one = False)
     return render_template('name.html', entries = entries)
 
 @app.route('/Mark')

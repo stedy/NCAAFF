@@ -1,0 +1,15 @@
+{% extends "layout.html" %}
+{% block body %}
+
+<h2>Picks by conference for {{ entries[0].Picker }}</h2>
+      <table>
+      <tr><td><b>Team</td>
+          <td><b>Conference</b></td></tr>
+        {% for entry in entries %}
+        <tr><td> {{ entry.Team }} </td>
+          <td> {{ entry.Conf }} </td></tr>
+	{% else %}
+	<b>Sorry, this database has not yet been installed</b>	
+  {% endfor %}
+</table>
+    {% endblock %}
