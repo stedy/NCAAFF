@@ -44,6 +44,7 @@ dbDisconnect(conn)
 
 #read in file for D3 plot
 d3raw <- read.csv("site/static/points_by_week.csv")
+standings <- rbind(standings, c('Mark', 0))
 standings <- standings[order(standings$picker, decreasing=F), ]
 current <- c('Y2013', Sys.Date(), 'score', standings$score)
 d3raw <- rbind(d3raw,current)
