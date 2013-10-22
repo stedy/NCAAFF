@@ -35,4 +35,4 @@ CREATE TABLE standingsplot
 	"date" INTEGER
 );
 
-CREATE TABLE raw_standings (Team text, allstandings text, confstandings text);
+CREATE TABLE raw_conference (Team text, allstandings text, confstandings text);
