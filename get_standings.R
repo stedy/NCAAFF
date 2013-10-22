@@ -80,6 +80,6 @@ final$Team <- trim.leading(final$Team)
 
 conn <- dbConnect(SQLite(), dbname="site/ncaaff.db")
 dbSendQuery(conn, "DROP table if exists raw_conference")
-dbWriteQuery(conn, "raw_conference", final)
+dbWriteTable(conn, "raw_conference", final)
 dbDisconnect(conn)
 write.table(final, "current_standings.txt", row.names = F)
