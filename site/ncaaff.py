@@ -7,9 +7,7 @@ from flask import Flask, request, session, g, redirect, url_for \
 
 from contextlib import closing
 
-DEBUG = True
 DATABASE = '/home/zachs/NCAAFF/site/ncaaff.db'
-SECRET_KEY = 'development key'
 
 app = Flask(__name__)
 app.config.from_object(__name__)
@@ -41,7 +39,6 @@ def before_request():
 def teardown_request(exception):
     if hasattr(g, 'db'):
         g.db.close()
-
 
 @app.route('/', methods = ['GET', 'POST'])
 def start():
@@ -81,27 +78,11 @@ def all_conferences():
             mac=mac, big10=big10, pac12 = pac12, sec=sec, sunbelt=sunbelt)
 
 
-@app.route('/query_results', methods = ['GET', 'POST'])
-def query_results():
-    error = None
-    if request.form['Indiv1'] == request.form['Indiv2']:
-        error = " You can't compare someone to themselves"
-        return render_template('query.html', error = error)
-    else: 
-        #request.form['Indiv1'] and request.form['Indiv2']:
-        dbname = str(request.form['Indiv1']) + "_" + str(request.form['Indiv2'])
-        entries = query_db("""select Home, Away, Homescore, Awayscore, Date, Datestr, picks1, picks2, indiv1, indiv2 
-                from %s""" % dbname, one = False)
-        return render_template('query_results.html', entries = entries)
 
 @app.route('/<name>')
 def name_results(name):
     entries = query_db("""select Team, Conf, Picker from picks where Picker == ?""", [name], one = False)
     return render_template('name.html', entries = entries)
-
-@app.route('/Mark')
-def mark():
-    return render_template('Mark.html')
 
 if __name__ == '__main__':
     app.run()

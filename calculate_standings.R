@@ -27,7 +27,6 @@ for(i in conferences){
   temp2$points <- scorefinal$points
   temp2 <- temp2[order(temp2$points, decreasing = T), ]
   temp2$confpercent <- signif(as.numeric(temp2$confpercent, 2))
-  temp2 <- rbind(temp2, c("", "", "", "", "", "", "", "", ""))
   final <- rbind(final,temp2)
 }
 
@@ -43,5 +42,9 @@ dbSendQuery(conn, "DROP table if exists allconf;")
 dbWriteTable(conn, "allconf", final)
 dbDisconnect(conn)
 
-#source('standingsplot.R')
-#source('test_sql.R')
+#read in file for D3 plot
+d3raw <- read.csv("site/static/points_by_week.csv")
+standings <- standings[order(standings$picker, decreasing=F), ]
+current <- c('Y2013', Sys.Date(), 'score', standings$score)
+d3raw <- rbind(d3raw,current)
+write.csv(d3raw, "site/static/points_by_week.csv", row.names=F, quote=F)
