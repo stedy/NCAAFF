@@ -46,6 +46,6 @@ dbDisconnect(conn)
 d3raw <- read.csv("site/static/points_by_week.csv")
 standings <- rbind(standings, c('Mark', 0))
 standings <- standings[order(standings$picker, decreasing=F), ]
-current <- c('Y2013', Sys.Date(), 'score', standings$score)
+current <- c('Y2013', as.character(Sys.Date()), 'score', standings$score)
 d3raw <- rbind(d3raw,current)
 write.csv(d3raw, "site/static/points_by_week.csv", row.names=F, quote=F)
