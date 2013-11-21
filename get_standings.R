@@ -1,4 +1,4 @@
-#get standings
+#get standings by scraping hardcoded links
 library(XML)
 library(stringr)
 library(RSQLite)
@@ -73,7 +73,8 @@ sunclean <- sunclean[c(3:10), ]
 names(sunclean) <- c("Team", "Conference", "Overall")
 Sys.sleep(5)
 
-final <- rbind(atclean, big12clean, amerclean, bigtenclean, cusaclean, macclean, mwcclean, pac12clean, secclean, sunclean)
+final <- rbind(atclean, big12clean, amerclean, bigtenclean, cusaclean,
+  macclean, mwcclean, pac12clean, secclean, sunclean)
 final$Team <- str_replace_all(final$Team, "[[:digit:]]", "")
 trim.leading <- function (x)  sub("^\\s+", "", x)
 final$Team <- trim.leading(final$Team)

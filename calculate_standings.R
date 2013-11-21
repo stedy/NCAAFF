@@ -1,19 +1,20 @@
 library(plyr)
 library(RSQLite)
-results <- read.table('current_standings.txt', sep = ' ', colClasses = "character", header = T)
+results <- read.table('current_standings.txt', sep = ' ',
+ colClasses = "character", header = T)
 names(results) <- c('school', 'conf', 'overall')
 results$confwins <- as.numeric(sapply(strsplit(results[, 2], "-"), "[[", 1))
 results$confloss <- as.numeric(sapply(strsplit(results[, 2], "-"), "[[", 2))
 results$school <- gsub("^\\s*\\d* ", "", results$school)
 
-all.teams <- read.csv("all_teamsclean.txt", header = F, colClasses = "character",
-                      strip.white = T)
+all.teams <- read.csv("all_teamsclean.txt", header = F,
+ colClasses = "character", strip.white = T)
 names(all.teams) <- c("conference", "school", "picker")
 merged <- merge(all.teams, results)
 merged$confpercent <- merged$confwins/(merged$confwins + merged$confloss)
 conferences <- unique(all.teams$conference)
-final <- c()
 
+final <- c()
 for(i in conferences){
   temp <- merged[merged$conference == i, ]
   temp2 <- temp[order(temp$confpercent, decreasing = T), ]
@@ -30,7 +31,8 @@ for(i in conferences){
   final <- rbind(final,temp2)
 }
 
-scores <- ddply(final, 'picker', function(x) data.frame(score = sum(as.numeric(x$points))))
+scores <- ddply(final, 'picker', function(x)
+ data.frame(score = sum(as.numeric(x$points))))
 standings <- scores[order(scores$score, decreasing = T), ]
 print.data.frame(standings, row.names=F)
 standings <- standings[standings$picker != "", ]
