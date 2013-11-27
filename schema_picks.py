@@ -14,9 +14,7 @@ csvk = csv.reader(open("all_teamsclean.txt", 'rb'), delimiter = ",",
 					quotechar = '"')
 
 k = (csvk,)
-csvk.next()
 
 for k in csvk:
-    print k
     cursor.execute('INSERT INTO picks VALUES (?,?,?)', k)
 connection.commit()

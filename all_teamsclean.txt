@@ -1,0 +1,119 @@
+ACC,Boston College,Zach
+ACC,Clemson,Jacob
+ACC,Florida State,Todd
+ACC,Maryland,Evan
+ACC,North Carolina State,Casey
+ACC,Syracuse,Jacob
+ACC,Wake Forest,Jeff
+ACC,Duke,Dave
+ACC,Georgia Tech,Zach
+ACC,Miami (FL),Casey
+ACC,North Carolina,Evan
+ACC,Pittsburgh,Todd
+ACC,Virginia,Dave
+ACC,Virginia Tech,Jeff
+American,Cincinnati,Dave
+American,Connecticut,Evan
+American,Houston,
+American,Louisville,Todd
+American,Memphis,
+American,Rutgers,Jacob
+American,South Florida,Zach
+American,Southern Methodist,Jeff
+American,Temple,
+American,UCF,Casey
+Big 12,Baylor,Evan
+Big 12,Iowa State,
+Big 12,Kansas,
+Big 12,Kansas State,Casey
+Big 12,Oklahoma,Jacob
+Big 12,Oklahoma State,Dave
+Big 12,TCU,Zach
+Big 12,Texas,Jeff
+Big 12,Texas Tech,
+Big 12,West Virginia,Todd
+Big Ten,Iowa,
+Big Ten,Michigan,Todd
+Big Ten,Michigan State,Evan
+Big Ten,Minnesota,
+Big Ten,Nebraska,Dave
+Big Ten,Northwestern,Jacob
+Big Ten,Illinois,
+Big Ten,Indiana,
+Big Ten,Ohio State,Jeff
+Big Ten,Penn State,Casey
+Big Ten,Purdue,
+Big Ten,Wisconsin,Zach
+Conference USA,East Carolina,Casey
+Conference USA,Florida Atlantic,Zach
+Conference USA,Florida International,Todd
+Conference USA,Marshall,Dave
+Conference USA,Middle Tennessee,Jeff
+Conference USA,Southern Miss,Zach
+Conference USA,UAB,Jacob
+Conference USA,Louisiana Tech,Casey
+Conference USA,North Texas,Jacob
+Conference USA,Rice,Dave
+Conference USA,Tulane,Todd
+Conference USA,Tulsa,Jeff
+Conference USA,UTEP,Evan
+Conference USA,Texas-San Antonio,Evan
+MAC,Akron,
+MAC,Bowling Green,Dave
+MAC,Buffalo,
+MAC,Kent State,Jeff
+MAC,Massachusetts,
+MAC,Miami (OH),
+MAC,Ohio,Casey
+MAC,Ball State,
+MAC,Central Michigan,Todd
+MAC,Eastern Michigan,
+MAC,Northern Illinois,Zach
+MAC,Toledo,Jacob
+MAC,Western Michigan,Evan
+MWC,Fresno State,Dave
+MWC,Hawaii,
+MWC,Nevada,Evan
+MWC,San Diego State,Jacob
+MWC,San Jose State,
+MWC,UNLV,
+MWC,Air Force,Zach
+MWC,Boise State,Casey
+MWC,Colorado State,
+MWC,New Mexico,Todd
+MWC,Utah State,Jeff
+MWC,Wyoming,
+Pac-12,California,
+Pac-12,Oregon,Todd
+Pac-12,Oregon State,Jeff
+Pac-12,Stanford,Zach
+Pac-12,Washington,Jacob
+Pac-12,Washington State,
+Pac-12,Arizona,
+Pac-12,Arizona State,Casey
+Pac-12,Colorado,
+Pac-12,UCLA,Dave
+Pac-12,USC,Evan
+Pac-12,Utah,
+SEC,Florida,Zach
+SEC,Georgia,Dave
+SEC,Kentucky,Zach
+SEC,Missouri,Todd
+SEC,South Carolina,Jacob
+SEC,Tennessee,Jeff
+SEC,Vanderbilt,Casey
+SEC,Alabama,Evan
+SEC,Arkansas,Dave
+SEC,Auburn,Casey
+SEC,LSU,Todd
+SEC,Mississippi State,Evan
+SEC,Mississippi,Jacob
+SEC,Texas A&M,Jeff
+Sun Belt,Arkansas State,Todd
+Sun Belt,Georgia State,Evan
+Sun Belt,Louisiana-Lafayette,Jeff
+Sun Belt,Louisiana-Monroe,Casey
+Sun Belt,South Alabama,
+Sun Belt,Texas State,Jacob
+Sun Belt,Troy,Zach
+Sun Belt,Western Kentucky,Dave
