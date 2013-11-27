@@ -87,5 +87,10 @@ def name_results(name):
             WHERE Picker == ?""", [name], one = False)
     return render_template('name.html', entries = entries)
 
+@app.route('/Mark')
+def mark():
+    """Mark bailed on this season so be sure to make fun of him"""
+    return render_template('Mark.html')
+
 if __name__ == '__main__':
     app.run()
