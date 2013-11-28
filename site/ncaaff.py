@@ -83,9 +83,10 @@ def all_conferences():
 @app.route('/<name>')
 def name_results(name):
     """View results of an individual person"""
-    entries = query_db("""select Team, Conf, Picker FROM picks
+    pickerentries = query_db("""select Team, Conf, Picker FROM picks
             WHERE Picker == ?""", [name], one = False)
-    return render_template('name.html', entries = entries)
+    assert len(pickerentries) == 13
+    return render_template('name.html', pickerentries = pickerentries)
 
 @app.route('/Mark')
 def mark():
